@@ -25,7 +25,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, onDelete }) => {
 
   return (
     <div className="task-card p-4 border rounded-lg shadow-md flex justify-between items-center">
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center w-full">
         <input
           className="w-6 h-6"
           type="checkbox"
@@ -36,6 +36,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, onDelete }) => {
           <input
             className="font-bold text-lg w-full"
             value={editedTitle}
+            onKeyDown={(e) => e.key === "Enter" && handleEditClick()}
             onChange={(e) => setEditedTitle(e.target.value)}
           />
         ) : (

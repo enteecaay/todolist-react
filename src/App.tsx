@@ -38,11 +38,11 @@ function App() {
         <div className="bg-red-700 p-4 rounded-lg text-white absolute -top-10 right-10 m-2">
           <h1 className="font-serif font-bold lg:text-3xl"> Todo-List App</h1>
         </div>
-        <div className="w-10/12 h-full bg-white p-4 rounded-lg shadow-lg flex flex-col">
+        <div className="w-10/12 my-20 bg-white p-4 rounded-lg shadow-lg flex flex-col">
           <AddTask onAddTask={addTask} />
           <div className="w-10-12 h-full max-h-screen flex flex-col gap-4 mt-10">
             <h2 className="font-bold text-xl font-merri">Task List</h2>
-            <div className="flex-grow overflow-y-scroll space-y-4">
+            <div className="flex-grow overflow-y-scroll space-y-4 h-3/4">
               {tasks.map((task) => (
                 <TaskCard
                   key={task.id}

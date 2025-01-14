@@ -33,6 +33,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
         onChange={(e) => setTaskTitle(e.target.value)}
         placeholder="Add a new task"
         className="border rounded-lg pl-6 h-12 w-full relative"
+        onKeyDown={(e) => e.key === "Enter" && handleAddTask()}
       />
       <button
         onClick={handleAddTask}
