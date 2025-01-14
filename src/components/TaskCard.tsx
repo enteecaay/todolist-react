@@ -34,24 +34,27 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, onDelete }) => {
         />
         {isEditing ? (
           <input
-            className="font-bold text-lg w-full"
+            className="lg:font-bold lg:text-lg w-full font-semibold"
             value={editedTitle}
             onKeyDown={(e) => e.key === "Enter" && handleEditClick()}
+            onBlur={handleEditClick}
             onChange={(e) => setEditedTitle(e.target.value)}
           />
         ) : (
-          <span className="font-bold text-lg">{task.title}</span>
+          <span className="lg:font-bold lg:text-lg font-semibold text-sm">
+            {task.title}
+          </span>
         )}
       </div>
       <div className="flex gap-1">
         <button
-          className="bg-blue-500 p-2 px-4 font-semibold rounded-lg text-white"
+          className="bg-blue-500 p-2 lg:px-4 font-semibold rounded-lg text-white lg:text-base text-sm"
           onClick={handleEditClick}
         >
           {isEditing ? "Save" : "Edit"}
         </button>
         <button
-          className="bg-red-500 p-2 px-4 font-semibold rounded-lg text-white"
+          className="bg-red-500 p-2 lg:px-4 font-semibold rounded-lg text-white lg:text-base text-sm"
           onClick={() => onDelete(task.id)}
         >
           Delete
